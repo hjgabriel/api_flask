@@ -55,7 +55,7 @@ def read_url():
     for king in json_list:
         #ignore if it is House of Wessex
         if king['hse'] != "House of Wessex":
-            row = [reverse(king['nm']), shorten_country(king['cty']),coronated_year(king['yrs']), datetime.datetime.utcnow()]
+            row = [reverse(king['nm']), shorten_country(king['cty']), king['hse'], coronated_year(king['yrs']), datetime.datetime.utcnow()]
             csv_writer.writerow(row)
 
     #close writer
